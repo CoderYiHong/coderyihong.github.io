@@ -22,7 +22,7 @@
 
   
 
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
 
   
 
@@ -101,12 +101,17 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap"></h1>
           <h2 class="title-sub-wrap">
             <strong>John Doe</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2025-03-28T10:16:51.885Z" itemprop="datePublished">2025-03-28</time>
+            <time  class="article-date" datetime="2025-03-26T11:40:33.736Z" itemprop="datePublished">2025-03-26</time>
           </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2025-03-29T08:41:24.314Z" itemprop="dateUpdated">2025-03-29</time>
+            </h2>
           
           
           <ul class="wrap-list dark">
@@ -136,19 +141,82 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <hr>
+<h2 id="harmony-OS-NEXT-Progress组件概述"><a href="#harmony-OS-NEXT-Progress组件概述" class="headerlink" title="harmony OS NEXT-Progress组件概述"></a>harmony OS NEXT-Progress组件概述</h2><h1 id="鸿蒙Harmony-Progress组件概述"><a href="#鸿蒙Harmony-Progress组件概述" class="headerlink" title="鸿蒙Harmony-Progress组件概述"></a>鸿蒙Harmony-Progress组件概述</h1><h2 id="1-1Progress组件概述"><a href="#1-1Progress组件概述" class="headerlink" title="1.1Progress组件概述"></a>1.1Progress组件概述</h2><ul>
+<li>作用：显示操作或任务的进度，支持线性，环形，刻度等多种样式</li>
+<li>适用场景：文件上传&#x2F;下载、任务完成度、系统状态反馈等</li>
+</ul>
+<h2 id="2-1基础属性（参考官方文档）"><a href="#2-1基础属性（参考官方文档）" class="headerlink" title="2.1基础属性（参考官方文档）"></a>2.1基础属性（参考官方文档）</h2><p>[<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-basic-components-progress-V5]">https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-basic-components-progress-V5]</a>: </p>
+<h3 id="2-1-1-参数详解"><a href="#2-1-1-参数详解" class="headerlink" title="2.1.1 参数详解"></a>2.1.1 参数详解</h3><h2 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h2><table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>说明</th>
+<th>卡片能力</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>value</strong></td>
+<td><code>number</code></td>
+<td>是</td>
+<td><code>0</code></td>
+<td>当前进度值。若设置 <code>&lt;0</code> 则自动置为 <code>0</code>；若 <code>&gt;total</code> 则置为 <code>total</code>。</td>
+<td>支持（API 9+）</td>
+</tr>
+<tr>
+<td><strong>total</strong></td>
+<td><code>number</code></td>
+<td>否</td>
+<td><code>100</code></td>
+<td>总进度长度。若设置 <code>≤0</code> 则自动置为 <code>100</code>。</td>
+<td>支持（API 9+）</td>
+</tr>
+<tr>
+<td><strong>type<sup>8+</sup></strong></td>
+<td><code>ProgressType</code></td>
+<td>否</td>
+<td><code>ProgressType.Linear</code></td>
+<td>进度条类型：<br><code>Linear</code>（线性）&#x2F;<code>Ring</code>（环形）&#x2F;<code>Eclipse</code>（圆形）&#x2F;<code>Scale</code>（刻度）</td>
+<td>支持（API 9+）</td>
+</tr>
+<tr>
+<td><strong>style (deprecated)</strong></td>
+<td><code>ProgressStyle</code></td>
+<td>否</td>
+<td><code>ProgressStyle.Linear</code></td>
+<td>进度条样式（已废弃，建议使用 <code>type</code> 替代）</td>
+<td>支持（API 9+，但不再推荐使用）</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-1-2关键说明"><a href="#2-1-2关键说明" class="headerlink" title="2.1.2关键说明"></a>2.1.2关键说明</h3><h3 id="value"><a href="#value" class="headerlink" title="value"></a><strong>value</strong></h3><ul>
+<li><p><strong>动态绑定</strong>：可通过变量动态更新进度值。</p>
+</li>
+<li><p><strong>范围控制</strong>：自动限制在 <code>[0, total]</code> 区间内。</p>
+</li>
+<li><p>示例：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@State</span> <span class="attr">progressValue</span>: <span class="built_in">number</span> = <span class="number">30</span>;</span><br><span class="line"><span class="title class_">Progress</span>(&#123; <span class="attr">value</span>: <span class="variable language_">this</span>.<span class="property">progressValue</span> &#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="3-1使用示例"><a href="#3-1使用示例" class="headerlink" title="3.1使用示例"></a>3.1使用示例</h2><blockquote>
+<p>下面我通过组件封装的案例给大家演示</p>
+</blockquote>
+<ol>
+<li>封装loading组件</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">Loading</span> &#123;</span><br><span class="line">  <span class="meta">@State</span> <span class="attr">present</span>: <span class="built_in">number</span> = <span class="number">10</span></span><br><span class="line">  <span class="keyword">private</span> <span class="attr">timeId</span>: <span class="built_in">number</span> | <span class="literal">null</span> = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="comment">//清除已有的定时器，防止重复调用</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">timeId</span>) &#123;</span><br><span class="line">      <span class="built_in">clearInterval</span>(<span class="variable language_">this</span>.<span class="property">timeId</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建新的定时器</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">timeId</span> = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">present</span> &gt;= <span class="number">100</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">present</span> = <span class="number">0</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">present</span>++</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">30</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">aboutToDisappear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">timeId</span>) &#123;</span><br><span class="line">      <span class="built_in">clearTimeout</span>(<span class="variable language_">this</span>.<span class="property">timeId</span>)</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">timeId</span> = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">Column</span>() &#123;</span><br><span class="line">      <span class="title class_">Progress</span>(&#123;</span><br><span class="line">        <span class="attr">value</span>: <span class="variable language_">this</span>.<span class="property">present</span>,</span><br><span class="line">        <span class="attr">type</span>: <span class="title class_">ProgressType</span>.<span class="property">Ring</span>,</span><br><span class="line">        <span class="attr">total</span>: <span class="number">100</span></span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Loading</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>展示页面</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Loading</span> <span class="keyword">from</span> <span class="string">&#x27;./Loading&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entry</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">Test3</span> &#123;</span><br><span class="line">  <span class="meta">@State</span></span><br><span class="line">  <span class="attr">isShow</span>: <span class="built_in">boolean</span> = <span class="literal">true</span></span><br><span class="line">  <span class="comment">//存储定时器Id  用于清除定时器</span></span><br><span class="line">  <span class="keyword">private</span> <span class="attr">timerId</span>: <span class="built_in">number</span> | <span class="literal">null</span> = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123; <span class="comment">//生命周期钩子，当组件即将显示时触发</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">timerId</span> = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123; <span class="comment">//设置一个一次性定时器  只会执行一次</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">isShow</span> = <span class="literal">false</span> <span class="comment">//3s将isShow标志设置为false</span></span><br><span class="line"></span><br><span class="line">    &#125;, <span class="number">3</span> * <span class="number">1000</span>) <span class="comment">//延迟时间：3s (3000ms)</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//避免组件在3s内被销毁，造成内存泄漏或报错  (比如用户快速切换页面)</span></span><br><span class="line">  <span class="comment">//修复：在组建销毁时清除定时器  添加生命周期销毁钩子</span></span><br><span class="line">  <span class="title function_">aboutToDisappear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">timerId</span>) &#123;</span><br><span class="line">      <span class="built_in">clearTimeout</span>(<span class="variable language_">this</span>.<span class="property">timerId</span>) <span class="comment">//清除定时器</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">timerId</span> = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">Column</span>() &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">isShow</span>) &#123;</span><br><span class="line">        <span class="title class_">Loading</span>()</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;.<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ol start="3">
+<li>效果展示</li>
+</ol>
+<p><img src="https://cyh2004131.oss-cn-beijing.aliyuncs.com/8e8026ff1d02ebf42bd40b1cbb2b8d4c.gif" alt="img"></p>
 
       </section>
 
@@ -161,8 +229,8 @@
     
     <div class="card-text">
       
-        <a href="/2025/03/29/blog2/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">(no title)</h2>
+        <a href="/2025/03/28/hello-world/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Hello World</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -170,20 +238,6 @@
   </article>
 </div>
           
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2025/03/26/blog7/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">(no title)</h2>
-        </a>
-      
-      <div class="card-text--row">Older</div>
-    </div>
-  </article>
-</div>
           
         </nav>
       

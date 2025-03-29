@@ -22,7 +22,7 @@
 
   
 
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
 
   
 
@@ -101,11 +101,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap"></h1>
           <h2 class="title-sub-wrap">
             <strong>John Doe</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2025-03-28T10:16:51.885Z" itemprop="datePublished">2025-03-28</time>
+            <time  class="article-date" datetime="2025-03-29T08:36:34.066Z" itemprop="datePublished">2025-03-29</time>
           </h2>
           
           
@@ -136,19 +136,34 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <hr>
+<h2 id="harmony-OS-NEXT-Image组件如何引用网络图片"><a href="#harmony-OS-NEXT-Image组件如何引用网络图片" class="headerlink" title="harmony OS NEXT-Image组件如何引用网络图片"></a>harmony OS NEXT-Image组件如何引用网络图片</h2><h3 id="1-引用网络图片资源"><a href="#1-引用网络图片资源" class="headerlink" title="1.引用网络图片资源"></a>1.引用网络图片资源</h3><blockquote>
+<p>引入网络图片需要申请权限ohos.permission.INTERNET，此时，Image组件的src参数为网络图片的链接，为了成功加载网络图片，您需要在module.json5文件中申请网络访问权限</p>
+<p>注意：实际可用的时候，首先需要保证网络地址可以访问，可以在浏览器中地址栏直接输如图像链接地址。同时，使用内网环境可能导致图片访问失败，可以断开网络代理尝试，接下来请看详细步骤</p>
+</blockquote>
+<ol>
+<li><strong>引入网络图片需要申请ohos.permission.INTERNET，可在module.json5文件中声明网络访问权限</strong></li>
+</ol>
+<p>代码示例</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;requestPermissions&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ohos.permission.INTERNET&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><img src="https://cyh2004131.oss-cn-beijing.aliyuncs.com/b582196d11eee143164a94203bb9948d.png" alt="image-20241127083344732"></p>
+<ol start="2">
+<li><strong>在保证图片地址可以访问的情况下，将地址写入Image组件当中</strong></li>
+</ol>
+<p>以我的图片网络地址为例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://img-blog.csdnimg.cn/img_convert/0bac102fe78698223fd63e80deee14b2.png&quot;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entry</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">ImageExample</span> &#123;</span><br><span class="line">  <span class="comment">//Contain:保持宽高比例进行缩小或者放大，使得图片完全显示在显示边界内</span></span><br><span class="line">  <span class="comment">//Cover(默认值):保持宽高比进行缩小或者方法，使得图片两边都大于或等于显示边界</span></span><br><span class="line">  <span class="comment">//Auto:自适应显示</span></span><br><span class="line">  <span class="comment">//Fill:不保持宽高比进行放大或缩小，使图片充满显示边界</span></span><br><span class="line">  <span class="comment">//ScaleDown 保持宽高比显示，图片保持或者保持不变</span></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="title class_">Column</span>() &#123;</span><br><span class="line">        <span class="title class_">Row</span>() &#123;</span><br><span class="line">    <span class="title class_">Image</span>(<span class="string">&quot;https://img-blog.csdnimg.cn/img_convert/0bac102fe78698223fd63e80deee14b2.png&quot;</span>)</span><br><span class="line">            .<span class="title function_">objectFit</span>(<span class="title class_">ImageFit</span>.<span class="property">Contain</span>)</span><br><span class="line">        &#125;.<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">      &#125;.<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">justifyContent</span>(<span class="title class_">FlexAlign</span>.<span class="property">Center</span>)</span><br><span class="line">    .<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Pink</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是图片并不会显示，这时候可以使用alt属性设置占位图，然后就能成功显示了</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Image</span>(<span class="string">&quot;https://www.example.com/xxx.png&quot;</span>)<span class="comment">// 直接加载网络地址，请填写一个具体的网络图片地址</span></span><br><span class="line"></span><br><span class="line">        .<span class="title function_">alt</span>($r(<span class="string">&#x27;app.media.icon&#x27;</span>))<span class="comment">// 使用alt，在网络图片加载成功前使用占位图</span></span><br><span class="line"></span><br><span class="line">        .<span class="title function_">width</span>(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">        .<span class="title function_">height</span>(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entry</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">ImageExample</span> &#123;</span><br><span class="line">  <span class="comment">//Contain:保持宽高比例进行缩小或者放大，使得图片完全显示在显示边界内</span></span><br><span class="line">  <span class="comment">//Cover(默认值):保持宽高比进行缩小或者方法，使得图片两边都大于或等于显示边界</span></span><br><span class="line">  <span class="comment">//Auto:自适应显示</span></span><br><span class="line">  <span class="comment">//Fill:不保持宽高比进行放大或缩小，使图片充满显示边界</span></span><br><span class="line">  <span class="comment">//ScaleDown 保持宽高比显示，图片保持或者保持不变</span></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="title class_">Column</span>() &#123;</span><br><span class="line">        <span class="title class_">Row</span>() &#123;</span><br><span class="line">    <span class="title class_">Image</span>(<span class="string">&quot;https://img-blog.csdnimg.cn/img_convert/0bac102fe78698223fd63e80deee14b2.png&quot;</span>)</span><br><span class="line">      .<span class="title function_">alt</span>($r(<span class="string">&#x27;app.media.icon&#x27;</span>))<span class="comment">// 使用alt，在网络图片加载成功前使用占位图</span></span><br><span class="line">      .<span class="title function_">width</span>(<span class="number">400</span>)</span><br><span class="line">      .<span class="title function_">height</span>(<span class="number">400</span>)</span><br><span class="line">            .<span class="title function_">objectFit</span>(<span class="title class_">ImageFit</span>.<span class="property">Contain</span>)</span><br><span class="line">        &#125;.<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">      &#125;.<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">justifyContent</span>(<span class="title class_">FlexAlign</span>.<span class="property">Center</span>)</span><br><span class="line">    .<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Pink</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cyh2004131.oss-cn-beijing.aliyuncs.com/8b64bbcd666a7f0364df14ef4622d4e6.png" alt="image-20241127084126551"></p>
 
       </section>
 
@@ -161,7 +176,7 @@
     
     <div class="card-text">
       
-        <a href="/2025/03/29/blog2/" itemprop="url">
+        <a href="/2025/03/29/blog4/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">(no title)</h2>
         </a>
       
@@ -176,7 +191,7 @@
     
     <div class="card-text">
       
-        <a href="/2025/03/26/blog7/" itemprop="url">
+        <a href="/2025/03/29/blog2/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">(no title)</h2>
         </a>
       

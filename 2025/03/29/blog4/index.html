@@ -22,7 +22,7 @@
 
   
 
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
 
   
 
@@ -101,11 +101,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap"></h1>
           <h2 class="title-sub-wrap">
             <strong>John Doe</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2025-03-28T10:16:51.885Z" itemprop="datePublished">2025-03-28</time>
+            <time  class="article-date" datetime="2025-03-29T08:37:13.670Z" itemprop="datePublished">2025-03-29</time>
           </h2>
           
           
@@ -136,19 +136,42 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <hr>
+<h2 id="harmony-OS-NEXT-应用状态-AppStorage详细介绍"><a href="#harmony-OS-NEXT-应用状态-AppStorage详细介绍" class="headerlink" title="harmony OS NEXT-应用状态-AppStorage详细介绍"></a>harmony OS NEXT-应用状态-AppStorage详细介绍</h2><h1 id="鸿蒙Harmony-应用状态-AppStorage详细介绍"><a href="#鸿蒙Harmony-应用状态-AppStorage详细介绍" class="headerlink" title="鸿蒙Harmony-应用状态-AppStorage详细介绍"></a>鸿蒙Harmony-应用状态-AppStorage详细介绍</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><blockquote>
+<p>AppStorage是在应用启动的时候会被创建的单例。它的目的是为了提供应用状态数据的中心存储，这些状态数据在应用级别都是可访问的。AppStorage将在应用运行过程保留其属性。属性通过唯一的键字符串值访问。</p>
+<p>AppStorage可以和UI组件同步，且可以在应用业务逻辑中被访问。</p>
+<p>AppStorage支持应用的<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/thread-model-stage-0000001820999617">主线程</a>内多个UIAbility实例间的状态共享。</p>
+<p>AppStorage中的属性可以被双向同步，数据可以是存在于本地或远程设备上，并具有不同的功能，比如数据持久化（详见<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-persiststorage-0000001774119950">PersistentStorage</a>）。这些数据是通过业务逻辑中实现，与UI解耦，如果希望这些数据在UI中使用，需要用到<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage-0000001774279622#ZH-CN_TOPIC_0000001774279622__storageprop">@StorageProp</a>和<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage-0000001774279622#ZH-CN_TOPIC_0000001774279622__storagelink">@StorageLink</a>。</p>
+</blockquote>
+<h2 id="1-2-使用方法"><a href="#1-2-使用方法" class="headerlink" title="1.2 使用方法"></a>1.2 使用方法</h2><blockquote>
+<p><code>AppStorage</code> 是应用全局的UI状态存储，是和应用的进程绑定的，由UI框架在应用程序启动时创建，为应用程序UI状态属性提供中央存储。-注意它也是内存数据，不会写入磁盘，主要分为下面几个步骤</p>
+</blockquote>
+<h3 id="1-2-1存入数据"><a href="#1-2-1存入数据" class="headerlink" title="1. 2.1存入数据"></a>1. 2.1存入数据</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    <span class="title class_">AppStorage</span>.<span class="title function_">setOrCreate</span>(<span class="string">&#x27;userInfo&#x27;</span>,userInfo)</span><br><span class="line"><span class="comment">//userinfo是自己提前拿到的数据 可以自己模拟一下</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-2-读取数据"><a href="#1-2-2-读取数据" class="headerlink" title="1.2.2 读取数据"></a>1.2.2 读取数据</h3><ol>
+<li>使用修饰符的方式拿数据</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@StorageLink</span>(<span class="string">&#x27;userInfo&#x27;</span>)</span><br><span class="line"><span class="attr">userInfo</span>: <span class="title class_">Record</span>&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; = &#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用API的方式拿取数据</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@State</span></span><br><span class="line"><span class="attr">userInfo</span>:<span class="title class_">Record</span>&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt;= &#123;&#125;</span><br><span class="line">  <span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">userInfo</span> = <span class="title class_">AppStorage</span>.<span class="title function_">get</span>(<span class="string">&#x27;userInfo&#x27;</span>)!</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+<h3 id="1-2-3-完整代码"><a href="#1-2-3-完整代码" class="headerlink" title="1.2.3 完整代码"></a>1.2.3 完整代码</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; router &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.ArkUI&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Entry</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">TestAppStorage01</span> &#123;</span><br><span class="line">  <span class="title function_">login</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">//存</span></span><br><span class="line">    <span class="keyword">const</span> <span class="attr">userInfo</span>:<span class="title class_">Record</span>&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt; = &#123;</span><br><span class="line">      <span class="string">&#x27;uname&#x27;</span>:<span class="string">&#x27;公孙离&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;nickname&#x27;</span>:<span class="string">&#x27;小阿狸&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title class_">AppStorage</span>.<span class="title function_">setOrCreate</span>(<span class="string">&#x27;userInfo&#x27;</span>,userInfo)</span><br><span class="line">    router.<span class="title function_">pushUrl</span>(&#123;</span><br><span class="line">      <span class="attr">url</span>:<span class="string">&#x27;pages/10/TestAppStorage02&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">Column</span>(&#123;<span class="attr">space</span>:<span class="number">12</span>&#125;) &#123;</span><br><span class="line">      <span class="title class_">Row</span>()&#123;</span><br><span class="line">        <span class="title class_">Text</span>(<span class="string">&#x27;账号：&#x27;</span>)</span><br><span class="line">        <span class="title class_">TextInput</span>()</span><br><span class="line">          .<span class="title function_">layoutWeight</span>(<span class="number">1</span>)</span><br><span class="line">      &#125;.<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">      .<span class="title function_">padding</span>(<span class="number">20</span>)</span><br><span class="line">      <span class="title class_">Row</span>()&#123;</span><br><span class="line">        <span class="title class_">Text</span>(<span class="string">&#x27;密码：&#x27;</span>)</span><br><span class="line">        <span class="title class_">TextInput</span>()</span><br><span class="line">          .<span class="title function_">layoutWeight</span>(<span class="number">1</span>)</span><br><span class="line">      &#125;.<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">      .<span class="title function_">padding</span>(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">      <span class="title class_">Row</span>()&#123;</span><br><span class="line">        <span class="title class_">Button</span>(<span class="string">&#x27;登录&#x27;</span>)</span><br><span class="line">          .<span class="title function_">onClick</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">login</span>()</span><br><span class="line">          &#125;)</span><br><span class="line"></span><br><span class="line">          .<span class="title function_">layoutWeight</span>(<span class="number">1</span>)</span><br><span class="line">      &#125;.<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">      .<span class="title function_">padding</span>(<span class="number">20</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entry</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">TestAppStorage02</span> &#123;</span><br><span class="line">  <span class="meta">@StorageLink</span>(<span class="string">&#x27;userInfo&#x27;</span>)</span><br><span class="line">  <span class="attr">userInfo</span>: <span class="title class_">Record</span>&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; = &#123;&#125;</span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">Column</span>() &#123;</span><br><span class="line">      <span class="title class_">Text</span>(<span class="string">&#x27;大神名称&#x27;</span> + <span class="variable language_">this</span>.<span class="property">userInfo</span>.<span class="property">uname</span>)</span><br><span class="line">      <span class="title class_">Text</span>(<span class="string">&#x27;江湖人称:&#x27;</span> + <span class="variable language_">this</span>.<span class="property">userInfo</span>.<span class="property">nickname</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-4-效果展示"><a href="#1-2-4-效果展示" class="headerlink" title="1.2.4 效果展示"></a>1.2.4 效果展示</h3><p><img src="https://cyh2004131.oss-cn-beijing.aliyuncs.com/2db29a9fb1501697b7e2bd4f12e2bfed.gif" alt="img"></p>
+<h3 id="1-4-5-总结"><a href="#1-4-5-总结" class="headerlink" title="1.4.5 总结"></a>1.4.5 总结</h3><p>AppStorage到底使用API还是修饰符</p>
+<ol>
+<li>取出的结果是否有UI更新的需求 - UI修饰符</li>
+<li>如果不需要进行UI展示，适合用API方法存取</li>
+</ol>
 
       </section>
 
@@ -161,7 +184,7 @@
     
     <div class="card-text">
       
-        <a href="/2025/03/29/blog2/" itemprop="url">
+        <a href="/2025/03/29/blog5/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">(no title)</h2>
         </a>
       
@@ -176,7 +199,7 @@
     
     <div class="card-text">
       
-        <a href="/2025/03/26/blog7/" itemprop="url">
+        <a href="/2025/03/29/blog3/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">(no title)</h2>
         </a>
       
