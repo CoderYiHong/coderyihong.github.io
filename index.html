@@ -1,364 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
   
+  <meta name="generator" content="Hexo 7.3.0">
+
   
+
+  
+
+  
+    <meta name="author" content="John Doe">
+  
+
+  
+
+  
+
   <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+
   
+
   
+
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
+</head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container">
+  
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Hexo
+        
+      </a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Navagation" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/29/Navagation/" class="article-date">
-  <time class="dt-published" datetime="2025-03-29T07:52:11.191Z" itemprop="datePublished">2025-03-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Navagation基本用法"><a href="#Navagation基本用法" class="headerlink" title="Navagation基本用法"></a>Navagation基本用法</h1><blockquote>
-<p>Navigation组件是路由导航的根视图容器，一般作为Page页面的根容器使用，其内部默认包含了标题栏，内容栏和公工具栏，其中内容区默认首页显示导航内容（Navigation的子组件）或非首页显示（NavDestination的子组件），首页和非首页通过路由进行切换</p>
-</blockquote>
-<ul>
-<li>使用Navigation跳转的组件不需要再使用Entry来修饰，普通组件即可</li>
-<li>Navigation是一个导航组件，API9和API11的使用官方推荐方式各不相同</li>
-</ul>
-<h2 id="1-Navagation-API9的用法-Navigation-NavRouter-其他组件-NavDestination的用法"><a href="#1-Navagation-API9的用法-Navigation-NavRouter-其他组件-NavDestination的用法" class="headerlink" title="1. Navagation API9的用法-(Navigation-NavRouter-(其他组件+NavDestination的用法))"></a>1. Navagation API9的用法-(Navigation-NavRouter-(其他组件+NavDestination的用法))</h2><h3 id="1-1导航组件层次关系"><a href="#1-1导航组件层次关系" class="headerlink" title="1. 1导航组件层次关系"></a>1. 1<strong>导航组件层次关系</strong></h3><table>
-<thead>
-<tr>
-<th>组件</th>
-<th>作用</th>
-<th>层级规则</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>Navigation</code></td>
-<td>管理所有导航页面的根容器</td>
-<td>必须包含多个 <code>NavRouter</code></td>
-</tr>
-<tr>
-<td><code>NavRouter</code></td>
-<td>定义一个跳转入口</td>
-<td>必须配对 <code>NavDestination</code></td>
-</tr>
-<tr>
-<td><code>NavDestination</code></td>
-<td>目标页面内容</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="1-2-按钮覆盖问题"><a href="#1-2-按钮覆盖问题" class="headerlink" title="**1. **2 按钮覆盖问题"></a>**1. **2 按钮覆盖问题</h3><ul>
-<li><strong>代码现象</strong>：<code>跳转B</code> 覆盖 <code>跳转A</code></li>
-<li><strong>根本原因</strong>：<br>在 <code>NavRouter</code> 内部放置多个直接同级组件时，仅最后一个组件会被渲染。</li>
-<li><strong>ArkUI规则</strong>：<br>一个 <code>NavRouter</code> 只能关联 <strong>一个触发元素</strong> (如Button)，如需多个跳转需使用多个 <code>NavRouter</code>。</li>
-</ul>
-<h3 id="1-3-代码案例"><a href="#1-3-代码案例" class="headerlink" title="1.3 代码案例"></a>1.3 代码案例</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entry</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">TestNavgationAPI9</span> &#123;</span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="title class_">Navigation</span>() &#123;</span><br><span class="line">      <span class="comment">// --------------------- 第一跳转入口 ---------------------</span></span><br><span class="line">      <span class="title class_">NavRouter</span>() &#123; <span class="comment">// ✅ 触发元素</span></span><br><span class="line">        <span class="title class_">Button</span>(<span class="string">&#x27;跳转A&#x27;</span>)</span><br><span class="line">        <span class="title class_">Button</span>(<span class="string">&#x27;跳转B&#x27;</span>) <span class="comment">//放置的第二个界面会覆盖第一个</span></span><br><span class="line">        <span class="comment">//要跳转的界面</span></span><br><span class="line">        <span class="title class_">NavDestination</span>() &#123; <span class="comment">// ✅ 目标页面A</span></span><br><span class="line">          <span class="title class_">Image</span>($r(<span class="string">&#x27;app.media.Coverpeople&#x27;</span>))</span><br><span class="line">            .<span class="title function_">width</span>(<span class="number">50</span>)</span><br><span class="line">            .<span class="title function_">aspectRatio</span>(<span class="number">1</span>)</span><br><span class="line">          <span class="comment">// --------------------- 第二跳转入口 ---------------------</span></span><br><span class="line">          <span class="title class_">NavRouter</span>() &#123; <span class="comment">// ✅ 触发元素</span></span><br><span class="line">            <span class="comment">//第一个组件就是跳转的</span></span><br><span class="line">            <span class="comment">// --------------------- 第二跳转入口 ---------------------</span></span><br><span class="line">            <span class="title class_">Text</span>(<span class="string">&#x27;我跳转啦&#x27;</span>) <span class="comment">// ✅ 目标页面B</span></span><br><span class="line">            <span class="title class_">NavDestination</span>() &#123;</span><br><span class="line">              <span class="title class_">Text</span>(<span class="string">&#x27;第三个界面&#x27;</span>) <span class="comment">// ✅ 目标页面C</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-效果展示"><a href="#1-4-效果展示" class="headerlink" title="1.4 效果展示"></a>1.4 效果展示</h3><p><img src="https://cyh2004131.oss-cn-beijing.aliyuncs.com/20250305191718.gif" alt="img"></p>
-<h2 id="2-Navagation-10的用法"><a href="#2-Navagation-10的用法" class="headerlink" title="2.Navagation 10的用法"></a>2.Navagation 10的用法</h2><h3 id="2-1-路由栈自主管理"><a href="#2-1-路由栈自主管理" class="headerlink" title="2.1 路由栈自主管理"></a>2.1 路由栈自主管理</h3><ul>
-<li><p><code>NavPathStack</code></p>
-<p>核心方法：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">pushPath</span>()    <span class="comment">// 压入新页面（保留前页）</span></span><br><span class="line"><span class="title function_">replacePath</span>() <span class="comment">// 替换当前页面（销毁前页） </span></span><br><span class="line"><span class="title function_">pop</span>()         <span class="comment">// 回到上一页</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="2-2-页面加载控制"><a href="#2-2-页面加载控制" class="headerlink" title="2.2 页面加载控制"></a>2.2 页面加载控制</h3><ul>
-<li><strong><code>navDestination(builder)</code></strong><br>通过 <code>Builder</code> 函数动态渲染路由目标：</li>
-</ul>
-<ul>
-<li>函数动态渲染路由目标：</li>
-</ul>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.<span class="title function_">navDestination</span>(<span class="variable language_">this</span>.<span class="property">navDesBuilder</span>) <span class="comment">// 动态路由映射</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="title function_">navDesBuilder</span>(<span class="params"><span class="attr">name</span>: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (name === <span class="string">&quot;pageTwo&quot;</span>) &#123;</span><br><span class="line">    <span class="title class_">NavgationChild02</span>() <span class="comment">// 根据 name 组装对应页面</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-跨组件通信"><a href="#2-3-跨组件通信" class="headerlink" title="2.3 跨组件通信"></a>2.3 跨组件通信</h3><ul>
-<li><p><code>@Provide</code> 与 <code>@Consume</code> 装饰器</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父级定义提供值</span></span><br><span class="line"><span class="meta">@Provide</span> <span class="attr">navPathStack</span>: <span class="title class_">NavPathStack</span> = <span class="keyword">new</span> <span class="title class_">NavPathStack</span>()</span><br><span class="line"><span class="comment">// 子组件自动获取</span></span><br><span class="line"><span class="meta">@Consume</span> <span class="attr">navPathStack</span>: <span class="title class_">NavPathStack</span></span><br></pre></td></tr></table></figure>
-
-<p>无需显式传递，自动向下注入。</p>
-</li>
-</ul>
-<h3 id="2-4-实现步骤"><a href="#2-4-实现步骤" class="headerlink" title="2.4 实现步骤"></a>2.4 实现步骤</h3><h4 id="1-自己管理页面栈-创建一个页面栈-（用-Provide修饰，方便跨组件使用）"><a href="#1-自己管理页面栈-创建一个页面栈-（用-Provide修饰，方便跨组件使用）" class="headerlink" title="1. 自己管理页面栈 创建一个页面栈 （用@Provide修饰，方便跨组件使用）"></a>1. 自己管理页面栈 创建一个页面栈 （用@Provide修饰，方便跨组件使用）</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Provide</span></span><br><span class="line"> <span class="attr">navPathStack</span>: <span class="title class_">NavPathStack</span> = <span class="keyword">new</span> <span class="title class_">NavPathStack</span>()</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-将创建的页面栈实例传递给主界面"><a href="#2-将创建的页面栈实例传递给主界面" class="headerlink" title="2.将创建的页面栈实例传递给主界面"></a>2.将创建的页面栈实例传递给主界面</h4><ul>
-<li><code>ps</code>:这一步还是蛮关键的，很多页面不展示就是这个原因</li>
-</ul>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Navigation</span>(<span class="variable language_">this</span>.<span class="property">navPathStack</span>) &#123;</span><br><span class="line">  <span class="title class_">Text</span>(<span class="string">&#x27;这是第一页-首页&#x27;</span>)</span><br><span class="line">  <span class="title class_">Button</span>(<span class="string">&#x27;去下一页&#x27;</span>)</span><br><span class="line">    .<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">navPathStack</span>.<span class="title function_">pushPath</span>(&#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;pageOne&#x27;</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">.<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-通过-Builder-函数动态渲染路由目标"><a href="#3-通过-Builder-函数动态渲染路由目标" class="headerlink" title="3.通过 Builder 函数动态渲染路由目标"></a>3.通过 <code>Builder</code> 函数动态渲染路由目标</h4><h5 id="1-先创建一个自定义Builder"><a href="#1-先创建一个自定义Builder" class="headerlink" title="1. 先创建一个自定义Builder"></a>1. 先创建一个自定义Builder</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="title function_">myNavPathStackBuilder</span>(<span class="params"><span class="attr">name</span>: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="comment">//根据传入的名字区渲染对应的页面</span></span><br><span class="line">  <span class="keyword">if</span> (name === <span class="string">&#x27;pageOne&#x27;</span>) &#123;</span><br><span class="line">    <span class="title class_">Children01</span>()</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (name === <span class="string">&#x27;pageTwo&#x27;</span>) &#123;</span><br><span class="line">    <span class="title class_">Children02</span>()</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (name === <span class="string">&#x27;pageThree&#x27;</span>) &#123;</span><br><span class="line">    <span class="title class_">Children03</span>()</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="2-传入Builder"><a href="#2-传入Builder" class="headerlink" title="2. 传入Builder"></a>2. 传入Builder</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.<span class="title function_">navDestination</span>(<span class="variable language_">this</span>.<span class="property">navDesBuilder</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>不需要加括号，这里有个底层原因</p>
-<ol>
-<li><strong>ArkUI 的 <code>navDestination</code> 机制</strong></li>
-</ol>
-<ul>
-<li><strong>设计逻辑</strong>:框架需要在导航时动态调用构建函数生成页面。若传递this.navDesBuilder()则：<ul>
-<li>代码执行时<strong>立即运行该函数</strong>（而非按需调用）</li>
-<li>返回结果可能为 <code>void</code> 或非组件类型，导致<strong>渲染异常</strong>。</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li><strong><code>@Builder</code> 函数的特性</strong></li>
-</ol>
-<ul>
-<li><p><strong>延迟执行</strong>：<code>@Builder</code> 定义的 UI 编译时会转为<strong>独立闭包代码块</strong></p>
-</li>
-<li><p><strong>调用时机</strong>：由 导航框架 在需要时（如<code>pushPath</code>）根据name参数触发构建</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">navPathStack</span>.<span class="title function_">pushPath</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;pageTwo&#x27;</span> &#125;);</span><br><span class="line"><span class="comment">// ▶️ 此时 ArkUI 内部通过 `.navDestination` 关联的 Builder 按需执行</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h5 id="3-跳转的实现"><a href="#3-跳转的实现" class="headerlink" title="3.跳转的实现"></a>3.跳转的实现</h5><ol>
-<li>通过点击事件调用当前<code>navPathStack</code>实例<code>pushPath</code>方法</li>
-<li>传入你要跳转页面的名字，进行跳转</li>
-</ol>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Button</span>(<span class="string">&#x27;去下一页&#x27;</span>)</span><br><span class="line">       .<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">navPathStack</span>.<span class="title function_">pushPath</span>(&#123;</span><br><span class="line">           <span class="attr">name</span>: <span class="string">&#x27;pageOne&#x27;</span></span><br><span class="line">         &#125;)</span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-子界面的定义"><a href="#4-子界面的定义" class="headerlink" title="4.子界面的定义"></a>4.子界面的定义</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">Children01</span> &#123;</span><br><span class="line">    <span class="comment">//接收主界面传递过来的页面栈</span></span><br><span class="line">  <span class="meta">@Consume</span> <span class="attr">navPathStack</span>: <span class="title class_">NavPathStack</span></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">NavDestination</span>() &#123;</span><br><span class="line">      <span class="title class_">Column</span>(&#123; <span class="attr">space</span>: <span class="number">5</span> &#125;) &#123;</span><br><span class="line">        <span class="title class_">Text</span>(<span class="string">&#x27;这是我从主页跳转的第一个界面&#x27;</span>)</span><br><span class="line">          .<span class="title function_">fontSize</span>(<span class="number">24</span>)</span><br><span class="line">          .<span class="title function_">fontWeight</span>(<span class="number">500</span>)</span><br><span class="line">        <span class="title class_">Button</span>(<span class="string">&#x27;跳转到第二个页面去&#x27;</span>)</span><br><span class="line">          .<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">navPathStack</span>.<span class="title function_">pushPath</span>(&#123;</span><br><span class="line">              <span class="attr">name</span>: <span class="string">&#x27;pageTwo&#x27;</span></span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">Children02</span> &#123;</span><br><span class="line">  <span class="meta">@Consume</span></span><br><span class="line">  <span class="attr">navPathStack</span>: <span class="title class_">NavPathStack</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">NavDestination</span>() &#123;</span><br><span class="line">      <span class="title class_">Column</span>(&#123; <span class="attr">space</span>: <span class="number">5</span> &#125;) &#123;</span><br><span class="line">        <span class="title class_">Text</span>(<span class="string">&#x27;这是我从主页跳转的第二个界面&#x27;</span>)</span><br><span class="line">          .<span class="title function_">fontSize</span>(<span class="number">24</span>)</span><br><span class="line">          .<span class="title function_">fontWeight</span>(<span class="number">500</span>)</span><br><span class="line">        <span class="title class_">Button</span>(<span class="string">&#x27;跳转到第三个页面去&#x27;</span>)</span><br><span class="line">          .<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">navPathStack</span>.<span class="title function_">pushPath</span>(&#123;</span><br><span class="line">              <span class="attr">name</span>: <span class="string">&#x27;pageThree&#x27;</span></span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">Children03</span> &#123;</span><br><span class="line">  <span class="meta">@Consume</span></span><br><span class="line">  <span class="attr">navPathStack</span>: <span class="title class_">NavPathStack</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">NavDestination</span>() &#123;</span><br><span class="line">      <span class="title class_">Column</span>() &#123;</span><br><span class="line">        <span class="title class_">Text</span>(<span class="string">&#x27;这是我从主页跳转的第三个界面&#x27;</span>)</span><br><span class="line">          .<span class="title function_">fontSize</span>(<span class="number">24</span>)</span><br><span class="line">          .<span class="title function_">fontWeight</span>(<span class="number">500</span>)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-效果展示"><a href="#5-效果展示" class="headerlink" title="5.效果展示"></a>5.效果展示</h4><p><img src="https://cyh2004131.oss-cn-beijing.aliyuncs.com/20250305202338.gif" alt="img"></p>
-<h2 id="3-NavagationAPI10使用的补充内容"><a href="#3-NavagationAPI10使用的补充内容" class="headerlink" title="3.NavagationAPI10使用的补充内容"></a>3.NavagationAPI10使用的补充内容</h2><h3 id="3-1-常见的API"><a href="#3-1-常见的API" class="headerlink" title="3.1 常见的API"></a>3.1 常见的API</h3><table>
-<thead>
-<tr>
-<th>配置组合</th>
-<th>代码示例</th>
-<th>效果描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>默认状态</td>
-<td><code>Navigation()  .title(&#39;主标题&#39;)</code></td>
-<td>标题栏显示 “主标题”，采用 Free 模式</td>
-</tr>
-<tr>
-<td>精简模式+隐藏标题</td>
-<td><code>Navigation()  .titleMode(NavigationTitleMode.Mini)  .hideTitleBar(true)</code></td>
-<td>标题栏完全不可见</td>
-</tr>
-<tr>
-<td>子页面独立配置</td>
-<td><code>NavDestination()  .title(&#39;子页标题&#39;)  .hideTitleBar(true)</code></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="3-2-传参获取参数的实现"><a href="#3-2-传参获取参数的实现" class="headerlink" title="3.2 传参获取参数的实现"></a>3.2 传参获取参数的实现</h3><h4 id="1-定义数据结构"><a href="#1-定义数据结构" class="headerlink" title="1.定义数据结构"></a>1.定义数据结构</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> hobby &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>,</span><br><span class="line">  <span class="attr">hobby</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-即将跳转页面传入参数"><a href="#2-即将跳转页面传入参数" class="headerlink" title="2.即将跳转页面传入参数"></a>2.即将跳转页面传入参数</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">NavDestination</span>() &#123;</span><br><span class="line">   <span class="title class_">Column</span>(&#123; <span class="attr">space</span>: <span class="number">5</span> &#125;) &#123;</span><br><span class="line">     <span class="title class_">Text</span>(<span class="string">&#x27;这是我从主页跳转的第二个界面&#x27;</span>)</span><br><span class="line">       .<span class="title function_">fontSize</span>(<span class="number">24</span>)</span><br><span class="line">       .<span class="title function_">fontWeight</span>(<span class="number">500</span>)</span><br><span class="line">     <span class="title class_">Button</span>(<span class="string">&#x27;跳转到第三个页面去&#x27;</span>)</span><br><span class="line">       .<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">navPathStack</span>.<span class="title function_">pushPath</span>(&#123;</span><br><span class="line">           <span class="attr">name</span>: <span class="string">&#x27;pageThree&#x27;</span>,</span><br><span class="line">           <span class="attr">param</span>: &#123; <span class="attr">name</span>: <span class="string">&#x27;猫猫球&#x27;</span>, <span class="attr">hobby</span>: <span class="string">&#x27;喜欢玩毛线球&#x27;</span> &#125; <span class="keyword">as</span> hobby</span><br><span class="line">         &#125;)</span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-跳转的页面接收数据"><a href="#3-跳转的页面接收数据" class="headerlink" title="3.跳转的页面接收数据"></a>3.跳转的页面接收数据</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line">struct <span class="title class_">Children03</span> &#123;</span><br><span class="line">  <span class="meta">@State</span></span><br><span class="line">  <span class="attr">hobby</span>: hobby[] = [] <span class="keyword">as</span> hobby[]</span><br><span class="line">  <span class="meta">@Consume</span></span><br><span class="line">  <span class="attr">navPathStack</span>: <span class="title class_">NavPathStack</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hobby</span> = <span class="variable language_">this</span>.<span class="property">navPathStack</span>.<span class="title function_">getParamByName</span>(<span class="string">&#x27;pageThree&#x27;</span>) <span class="keyword">as</span> hobby[]</span><br><span class="line">    promptAction.<span class="title function_">showToast</span>(&#123;</span><br><span class="line">      <span class="attr">message</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(<span class="variable language_">this</span>.<span class="property">hobby</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">build</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">NavDestination</span>() &#123;</span><br><span class="line">      <span class="title class_">Column</span>() &#123;</span><br><span class="line">        <span class="title class_">Text</span>(<span class="string">&#x27;这是我从主页跳转的第三个界面&#x27;</span>)</span><br><span class="line">        <span class="title class_">Text</span>(<span class="string">&#x27;这是我获取的数据&#x27;</span>)</span><br><span class="line">        <span class="title class_">Text</span>(<span class="variable language_">this</span>.<span class="property">hobby</span>[<span class="number">0</span>].<span class="property">name</span>)</span><br><span class="line">        <span class="title class_">Text</span>(<span class="variable language_">this</span>.<span class="property">hobby</span>[<span class="number">0</span>].<span class="property">hobby</span>)</span><br><span class="line">          .<span class="title function_">fontWeight</span>(<span class="number">500</span>)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-效果展示"><a href="#4-效果展示" class="headerlink" title="4.效果展示"></a>4.效果展示</h4><p><img src="https://cyh2004131.oss-cn-beijing.aliyuncs.com/20250305210705.gif"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/29/Navagation/" data-id="cm8txbduh0001csu65yzr590k" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/28/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-03-28T10:16:51.885Z" itemprop="datePublished">2025-03-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <ul class="navbar-list">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/28/hello-world/" data-id="cm8txbduc0000csu61jxi2ru0" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
+          <li class="navbar-list-item"><a href="/">首页</a></li>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
         
-          <li>
-            <a href="/2025/03/29/Navagation/">(no title)</a>
-          </li>
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
         
-          <li>
-            <a href="/2025/03/28/hello-world/">Hello World</a>
-          </li>
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+  
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap">Hexo</h1>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+  
 
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+</header>
+
+    <!-- 首页 -->
+
+<!-- post list container -->
+<div class="body-container">
+  <div class="content-container layout-block article-list">
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2025/03/29/Navagation/" itemprop="url">
+                <h2 class="card-text--title">(no title)</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2025-03-29T07:52:11.191Z" itemprop="datePublished">2025-03-29</time>
+            </div>
+            
+              <div class="last-time">
+                <span>更新于</span>
+                <time  class="article-updated" datetime="2025-03-05T13:12:48.677Z" itemprop="dateUpdated">2025-03-05</time>
+              </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2025/03/28/hello-world/" itemprop="url">
+                <h2 class="card-text--title">Hello World</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2025-03-28T10:16:51.885Z" itemprop="datePublished">2025-03-28</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+  </div>
+</div>
+
+<!-- page container -->
+
+
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/miiiku/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://twitter.com/guanquanhong" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+</svg>
+          </a>
+        
+      
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+     
+    <p>&copy; 2025 <a href="/" target="_blank">John Doe</a></p>
+
     
 
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  
 
 
 
@@ -366,9 +266,7 @@
 <script src="/js/script.js"></script>
 
 
-
-
-
-  </div>
+  
+  <!-- 尾部用户自定义相关内容 -->
 </body>
 </html>
